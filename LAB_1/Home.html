@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <title>Soda Stereo - Fan Page</title> 
+        <link rel="icon" type="image/png" href="favicon.ico">
+        <style>
+            body{
+                background-image: url('fondo3.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                height: 100vh;
+            }    
+            .logo-soda{
+                font-family: 'Bangers', cursive;
+                font-size: 80px;
+                color: #FFEE00; /* Amarillo */
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                -webkit-text-stroke: 3px #000; /* Borde negro */
+                text-shadow: 
+                    5px 5px 0px #000,
+                    6px 6px 0px #888; /* Sombra 3D */
+                transform: rotate(-4deg); /* Inclinación */
+                margin-bottom: 20px;
+            }
+            .contenido{
+                max-width: 800px;
+                margin: 80px auto;
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia para leer bien */
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                text-align: center;
+            }
+            p{
+                font-size: 18px;
+                line-height: 1.6;
+                text-align: justify;
+            }
+            button{
+                margin-top: 30px;
+                padding: 12px 25px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                border: 2px solid #000;
+                border-radius: 8px;
+                background-color: #FFEE00;
+            }
+
+            button:hover{
+                background-color: #000;
+                color: #FFEE00;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="contenido">
+            <h1 class="logo-soda">SODA STEREO</h1>
+            <p><!--This is paragraph-->
+                Bienvenidos al universo de Soda Stereo, la banda que transformó para siempre la historia del rock en español. Liderada por Gustavo Cerati, 
+                junto a Zeta Bosio y Charly Alberti, esta mítica agrupación argentina no solo definió el sonido de una generación desde los años 80, sino que
+                logró cruzar fronteras para unir a toda Latinoamérica bajo una misma pasión musical.
+            </p>
+            <p>
+                En este espacio encontrarás un recorrido por su fascinante trayectoria: desde las enérgicas melodías de sus inicios hasta la vanguardia de 
+                sus álbumes más icónicos, pasando por sus conciertos legendarios y la vigencia de un legado que sigue marcando el ritmo hasta el día de hoy.
+            </p>
+            <p>
+                ¡Prepara tus sentidos y disfruta del viaje por la música de la banda más grande de Latinoamérica!
+            </p>
+            <br> <!--This is a line break-->
+            <img src="fotoPrincipal.png" width=""250px> <!--This is an image and this is also an example of an empty tag-->
+            <br>
+            <button type="button" onclick="window.location.href='about.html';">Biografía</button>
+            <button type="button" onclick="window.location.href='Carrera.html';">Carrera</button>
+            <button type="button" onclick="window.location.href='favoritos.html';">Top canciones</button>
+            <br>
+            <button type="button" onclick="window.location.href='../Index.html';">Página Principal</button>
+        </div>
+    </body>
+</html>
