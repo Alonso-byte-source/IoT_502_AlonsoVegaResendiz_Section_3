@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo IoT de estacionamiento inteligente del Tec de Monterrey.">
+  <title>Smart Parking | Tec de Monterrey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Smart Parking inicio">
+      <span class="brand-mark">P</span>
+      <span><strong>SMART PARKING</strong><small>TEC DE MONTERREY · QUERÉTARO</small></span>
+    </a>
+    <div class="top-status"><span class="live-dot"></span><span id="connectionText">Simulación activa</span><span class="top-divider"></span><span id="clock">--:--:--</span></div>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">SISTEMA DE MONITOREO IoT</p>
+        <h1>Estacionamiento <span>inteligente.</span></h1>
+        <p class="subtitle">Consulta la disponibilidad de espacios en tiempo real mediante sensores simulados.</p>
+      </div>
+      <div class="simulation-tag"><span class="pulse"></span> DATOS SIMULADOS</div>
+    </section>
+
+    <section class="stats" aria-label="Resumen del estacionamiento">
+      <article class="stat-card total-card">
+        <div class="stat-top"><span class="stat-icon">▦</span><span class="stat-label">CAPACIDAD TOTAL</span></div>
+        <div class="stat-value" id="totalCount">60</div>
+        <div class="stat-foot">Espacios registrados</div>
+      </article>
+      <article class="stat-card occupied-card">
+        <div class="stat-top"><span class="stat-icon">▣</span><span class="stat-label">OCUPADOS</span></div>
+        <div class="stat-value" id="occupiedCount">--</div>
+        <div class="stat-foot"><span class="mini-dot red"></span> Vehículos detectados</div>
+      </article>
+      <article class="stat-card available-card">
+        <div class="stat-top"><span class="stat-icon">✓</span><span class="stat-label">DISPONIBLES</span></div>
+        <div class="stat-value" id="availableCount">--</div>
+        <div class="stat-foot"><span class="mini-dot green"></span> Espacios libres</div>
+      </article>
+      <article class="stat-card percent-card">
+        <div class="stat-top"><span class="stat-icon">◔</span><span class="stat-label">OCUPACIÓN</span></div>
+        <div class="stat-value"><span id="occupancyPercent">--</span><small>%</small></div>
+        <div class="progress-track"><div class="progress-fill" id="occupancyBar"></div></div>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel parking-panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">VISTA GENERAL</p><h2>Mapa del estacionamiento</h2></div>
+          <div class="legend">
+            <span><i class="legend-box free"></i>Disponible</span>
+            <span><i class="legend-box busy"></i>Ocupado</span>
+          </div>
+        </div>
+        <div class="map-toolbar">
+          <span><span class="sensor-icon">⌁</span> 60 sensores virtuales conectados</span>
+          <span id="lastUpdate">Última actualización: --</span>
+        </div>
+        <div class="parking-map" id="parkingMap" aria-label="Mapa interactivo de espacios"></div>
+        <div class="map-note"><span>ⓘ</span> Selecciona cualquier espacio para simular la entrada o salida de un vehículo.</div>
+      </section>
+
+      <aside class="side-column">
+        <section class="panel activity-panel">
+          <div class="panel-heading compact"><div><p class="eyebrow">CONTROL</p><h2>Simulación IoT</h2></div><span class="chip active-chip" id="simulationState">ACTIVA</span></div>
+          <p class="side-description">Los sensores virtuales modifican aleatoriamente el estado de los espacios para representar la detección de vehículos.</p>
+          <div class="control-buttons">
+            <button class="btn btn-primary" id="toggleSimulation"><span id="toggleIcon">Ⅱ</span><span id="toggleText">Pausar simulación</span></button>
+            <button class="btn btn-secondary" id="randomizeButton">↻ Reiniciar datos</button>
+          </div>
+          <div class="interval-row"><label for="intervalSelect">Frecuencia de actualización</label>
+            <select id="intervalSelect"><option value="2000">2 segundos</option><option value="4000" selected>4 segundos</option><option value="7000">7 segundos</option><option value="10000">10 segundos</option></select>
+          </div>
+        </section>
+
+        <section class="panel activity-log-panel">
+          <div class="panel-heading compact"><div><p class="eyebrow">MONITOREO</p><h2>Actividad reciente</h2></div><span class="log-count" id="logCount">0 eventos</span></div>
+          <div class="activity-list" id="activityList"><div class="empty-state">Esperando actividad de los sensores…</div></div>
+        </section>
+
+        <section class="reference-card">
+          <div class="reference-copy"><p class="eyebrow">REFERENCIA DEL PROYECTO</p><strong>Estacionamiento del campus</strong><span>Imagen proporcionada para el diseño del prototipo.</span></div>
+          <img src="assets/estacionamiento-referencia.png" alt="Fotografía aérea del estacionamiento del Tec de Monterrey en Querétaro">
+        </section>
+      </aside>
+    </div>
+    <footer><span>SMART PARKING · LAB 3</span><span>Prototipo académico · Información simulada, sin sensores físicos</span></footer>
+    <div class="control-buttons">
+      <button class="btn btn-primary" onclick="window.location.href='../index.html';">Home Page</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
